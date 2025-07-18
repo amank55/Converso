@@ -66,25 +66,23 @@ export default function RecentSessionsTable() {
   return (
     <div className="flex gap-6 items-start mt-10">
       {/* Recent Sessions Table (60% width) */}
-      <div className="w-[60%] bg-white rounded-xl shadow-md p-6 border border-gray-300">
-        <h2 className="text-xl font-semibold mb-4">Recent Sessions</h2>
+      <div className="w-full bg-white rounded-xl shadow-md p-6 border border-gray-300">
+        <h2 className="text-2xl font-bold mb-4">Recent Sessions</h2>
         <Table>
           <TableHeader className="border-b-2 border-black">
             <TableRow>
               <TableHead className="text-base font-semibold">Lessons</TableHead>
               <TableHead className="text-base font-semibold">Subject</TableHead>
-              <TableHead className="text-base font-semibold text-right">
-                Duration
-              </TableHead>
+              <TableHead className="text-base font-semibold text-right">Duration</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {recentSessions.map((item, index) => (
               <TableRow
                 key={index}
-                className="border-b border-gray-300 hover:bg-gray-50 transition"
+                className="border-b border-gray-300 hover:bg-gray-50 transition py-2"
               >
-                <TableCell>
+                <TableCell className="py-2">
                   <div className="flex items-center gap-3">
                     <div
                       className="w-10 h-10 flex items-center justify-center rounded-md"
@@ -99,35 +97,22 @@ export default function RecentSessionsTable() {
                     </div>
                     <div>
                       <p className="font-medium">{item.name}</p>
-                      <p className="text-muted-foreground text-sm">
-                        {item.topic}
-                      </p>
+                      <p className="text-muted-foreground text-sm">{item.topic}</p>
                     </div>
                   </div>
                 </TableCell>
-                <TableCell>
+                <TableCell className="py-2">
                   <span className="bg-black text-white text-xs font-semibold px-2 py-1 rounded-full">
                     {item.subject}
                   </span>
                 </TableCell>
-                <TableCell className="text-right">{item.duration}</TableCell>
+                <TableCell className="text-right py-2">{item.duration}</TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
       </div>
 
-      {/* CTA Placeholder (you can replace this with real component) */}
-      <div className="w-[38%] bg-gray-100 rounded-xl p-6 border border-gray-300">
-        <h2 className="text-lg font-semibold mb-2">Start learning your way</h2>
-        <p className="text-sm text-muted-foreground mb-4">
-          Build a Personalized Learning Companion. Pick a name, subject, voice &
-          personality and start exploring.
-        </p>
-        <button className="bg-black text-white px-4 py-2 rounded-md text-sm">
-          Create Companion
-        </button>
-      </div>
     </div>
   );
 }

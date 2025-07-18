@@ -5,12 +5,11 @@ import React from 'react'
 
 const page = () => {
   return (
-    <div className="px-10 pb-20">
-      {/* Header */}
-      <h1 className="text-2xl underline mb-8">Popular Companions</h1>
-
-      {/* Companion Cards Section */}
-      <section className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-20">
+   <div>
+    <h1 className='text-2xl underline px-10'>Popular Companions</h1>
+     
+     <section className='home-section px-8 gap-8'>
+      <section className="home-section">
         <CompanionCard
           id="123"
           name="Neura the Brainy Explorer"
@@ -19,6 +18,7 @@ const page = () => {
           duration={45}
           color="#ffda6e"
         />
+
         <CompanionCard
           id="456"
           name="Countsy the Number Wizard"
@@ -27,7 +27,8 @@ const page = () => {
           duration={30}
           color="#e5d0ff"
         />
-        <CompanionCard
+
+       <CompanionCard
           id="789"
           name="Verba the Vocabulary Builder"
           topic="language"
@@ -36,22 +37,16 @@ const page = () => {
           color="#BDE7FF"
         />
       </section>
+     </section>
 
-      {/* Sessions + CTA side by side */}
-      <section className="flex flex-col md:flex-row gap-8">
-        {/* Left: Recent Sessions (styled like original) */}
-        <div className="flex-1 bg-white rounded-2xl border border-gray-200 shadow-sm p-6">
-          <RecentSessions />
-        </div>
 
-        {/* Right: CTA Card */}
-        <div className="flex-1">
-          <div className="h-full bg-black p-6 rounded-2xl border border-gray-200 shadow-sm flex flex-col justify-between">
-            <Cta />
-          </div>
-        </div>
-      </section>
-    </div>
+     <section className='home-section'>
+       <RecentSessions />
+       <Cta />             
+   
+     </section>
+    
+   </div>
   )
 }
 
