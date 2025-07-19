@@ -6,7 +6,7 @@ import React from 'react'
 const page = () => {
   return (
    <div>
-    <h1 className='text-2xl underline px-10'>Popular Companions</h1>
+    <h1 className='text-2xl  px-10'>Popular Companions</h1>
      
      <section className='home-section px-8 gap-8'>
       <section className="home-section">
